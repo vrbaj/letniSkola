@@ -29,7 +29,7 @@ def get_dice_intensity(cap, background, dice_number, calibration):
 
 def find_nearest(array, value):
     idx = (np.abs(array-value)).argmin()
-    dice = 'neznama'
+    dice = 'neznam'
     if idx == 0:
         dice = 'jedna'
     elif idx == 1:
