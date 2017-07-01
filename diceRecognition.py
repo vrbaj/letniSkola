@@ -48,7 +48,6 @@ def find_nearest(array, value):
 def main(argv):
     dices_intensity = np.zeros(6)
     calibration_number = 1
-    kernel = np.ones((7, 7), np.uint8)
     print argv
     cap = cv2.VideoCapture(0)
     # ziskani pozadi
@@ -59,6 +58,7 @@ def main(argv):
         cv2.imshow('Pozadi', image_gray)
         if cv2.waitKey(10) & 0xFF == ord('q'):
             background = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            cv2.imwrite('kostka.jpg', background)
             break
 
     for x in np.nditer(dices_intensity, op_flags=['readwrite']):
